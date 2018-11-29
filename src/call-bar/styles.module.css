@@ -1,0 +1,134 @@
+.center {
+  width: 100%;
+  display: none;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+}
+
+.slide-in {
+  display: flex;
+  /* Safari and Chrome */
+  -webkit-animation: show 1.5s;
+}
+
+.slide-out {
+  display: flex;
+  /* Safari and Chrome */
+  -webkit-animation: hide 1.5s;
+}
+
+.container {
+  width: 600px;
+  height: 50px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blinker {
+  width: 600px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.blinker-transitions {
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-animation: blink normal 1.5s infinite ease-in-out;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  25% {
+    background-color: rgba(17, 204, 121, 0.75);
+  }
+  50% {
+    background-color: rgba(17, 204, 121, 1);
+  }
+  75% {
+    background-color: rgba(17, 204, 121, 0.25);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
+@-webkit-keyframes show /* Safari and Chrome */ {
+  from {
+    bottom: -30px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes hide /* Safari and Chrome */ {
+  0% {
+    display: flex;
+    bottom: 0px;
+    opacity: 1;
+  }
+  99% {
+    display: flex;
+    bottom: -30px;
+    opacity: 0;
+  }
+  100% {
+    display: none;
+    bottom: -30px;
+    opacity: 0;
+  }
+}
+
+.call-bar {
+  height: 44px;
+  width: 594px;
+  display: flex;
+  border-radius: 10px;
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
+}
+
+.controls {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.answer,
+.hangup {
+  border-radius: 30px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.answer {
+  background-color: rgba(17, 204, 121, 1);
+}
+
+.hangup {
+  background-color: red;
+}
